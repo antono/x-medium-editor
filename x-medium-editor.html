@@ -1,0 +1,84 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing rich text editor.
+
+##### Example
+
+    <x-medium-editor></x-medium-editor>
+
+@element x-medium-editor
+@blurb Element providing wysiywg editor with hover toolbar.
+@status alpha
+@homepage http://antono.github.io/x-medium-editor
+-->
+<polymer-element name="x-medium-editor" attributes="author fancy">
+  <template>
+    <link rel="stylesheet" href="x-medium-editor.css">
+    <link rel="stylesheet" href="../medium-editor/dist/css/medium-editor.min.css">
+    <link rel="stylesheet" href="../medium-editor/dist/css/themes/flat.min.css">
+    <link rel="stylesheet" href="../medium-editor/dist/js/medium-editor.js">
+    <h1>Hello from x-medium-editor</h1>
+    <content>
+    </content>
+  </template>
+
+  <script>
+    Polymer({
+      /**
+       * The `author` attribute sets an initial author
+       *
+       * @attribute author
+       * @type string
+       * @default 'Antono Vasiljev'
+       */
+      author: 'Antono Vasiljev',
+
+      /**
+       * `fancy` is a property that does something fancy.
+       *
+       * @property fancy
+       * @type bool
+       * @default false
+       */
+      fancy: false,
+
+      ready: function () {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      },
+
+      /**
+       * The `sayHello` method will return a greeting.
+       *
+       * @method sayHello
+       * @param {String} greeting Pass in a specific greeting.
+       * @return {String} Returns a string greeting.
+       */
+      sayHello: function (greeting) {
+        var response = greeting || 'Hello World!';
+        return 'x-medium-editor says, ' + response;
+      },
+
+      /**
+       * The `x-medium-editor-lasers-success` event is fired whenever we
+       * call fireLasers.
+       *
+       * @event x-medium-editor-lasers-success
+       * @param {Object} detail
+       *   @param {string} detail.sound An amazing sound.
+       */
+
+      /**
+       * The `fireLasers` method will fire the lasers. At least
+       * it will dispatch an event that claims lasers were fired :)
+       *
+       * @method fireLasers
+       */
+      fireLasers: function () {
+        this.fire('x-medium-editor-lasers-success', { sound: 'Pew pew pew!' });
+      }
+    });
+  </script>
+</polymer-element>

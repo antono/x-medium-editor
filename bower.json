@@ -1,0 +1,18 @@
+{
+  "name": "x-medium-editor",
+  "version": "0.0.0",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "medium-editor",
+    "wysiwyg"
+  ],
+  "main": "x-medium-editor.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "medium-editor": "~4.6.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.2.3"
+  }
+}
