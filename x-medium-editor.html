@@ -12,27 +12,27 @@ Element providing rich text editor.
 @status alpha
 @homepage http://antono.github.io/x-medium-editor
 -->
-<polymer-element name="x-medium-editor" attributes="author fancy">
+<polymer-element name="x-medium-editor" attributes="fancy">
   <template>
     <link rel="stylesheet" href="x-medium-editor.css">
     <link rel="stylesheet" href="../medium-editor/dist/css/medium-editor.min.css">
     <link rel="stylesheet" href="../medium-editor/dist/css/themes/flat.min.css">
-    <link rel="stylesheet" href="../medium-editor/dist/js/medium-editor.js">
-    <h1>Hello from x-medium-editor</h1>
-    <content>
-    </content>
+    <div id="container">
+      <div id="editor"></div>
+    </div>
   </template>
 
+  <script src="../medium-editor/dist/js/medium-editor.js"></script>
   <script>
     Polymer({
       /**
-       * The `author` attribute sets an initial author
+       * The `editor` property contain `MediumEditor` object
        *
-       * @attribute author
-       * @type string
-       * @default 'Antono Vasiljev'
+       * @attribute editor
+       * @type object
+       * @default null
        */
-      author: 'Antono Vasiljev',
+      editor: null,
 
       /**
        * `fancy` is a property that does something fancy.
@@ -44,9 +44,11 @@ Element providing rich text editor.
       fancy: false,
 
       ready: function () {
-        // Ready is a lifecycle callback.
-        // You can do setup work in here.
-        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+        this.editor = new MediumEditor(this.$.editor, {
+          elementsContainer: this.$.container,
+          ownerDocument: this.$.container,
+          buttons: ['bold', 'italic', 'quote']
+        });
       },
 
       /**

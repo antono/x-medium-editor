@@ -1,7 +1,4 @@
 # x-medium-editor
 
-See the [component page](http://antono.github.io/x-medium-editor) for more information.
+Blocked by bug  [212](https://github.com/webcomponents/webcomponentsjs/issues/212)
 
-## Getting Started
-
-We've put together a [guide for x-medium-editor](http://www.polymer-project.org/docs/start/reusableelements.html) to help get you rolling.
