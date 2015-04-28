@@ -10,7 +10,7 @@
   "main": "x-medium-editor.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.4",
-    "medium-editor": "~4.6.0"
+    "medium-editor": "~4.7.0"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.2.3"
