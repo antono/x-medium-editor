@@ -46,7 +46,7 @@ Element providing rich text editor.
       ready: function () {
         this.editor = new MediumEditor(this.$.editor, {
           elementsContainer: this.$.container,
-          ownerDocument: this.$.container,
+          ownerDocument: document,
           buttons: ['bold', 'italic', 'quote']
         });
       },

@@ -1,0 +1,31 @@
+{
+  "name": "x-medium-editor",
+  "version": "0.0.1",
+  "description": "medium-editor web component",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node ./node_modules/polyserve/bin/polyserve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antono/x-medium-editor.git"
+  },
+  "keywords": [
+    "wysiwyg",
+    "polymer",
+    "medium",
+    "editor"
+  ],
+  "author": "Antono Vasiljev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antono/x-medium-editor/issues"
+  },
+  "homepage": "https://github.com/antono/x-medium-editor",
+  "devDependencies": {
+    "polyserve": "^0.3.0"
+  }
+}
