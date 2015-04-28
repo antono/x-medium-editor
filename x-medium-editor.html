@@ -24,6 +24,7 @@ Element providing rich text editor.
 
   <script src="../medium-editor/dist/js/medium-editor.js"></script>
   <script>
+
     Polymer({
       /**
        * The `editor` property contain `MediumEditor` object
@@ -44,43 +45,22 @@ Element providing rich text editor.
       fancy: false,
 
       ready: function () {
+
         this.editor = new MediumEditor(this.$.editor, {
           elementsContainer: this.$.container,
           ownerDocument: document,
           buttons: ['bold', 'italic', 'quote']
         });
+
+        this.$.editor.addEventListener('dblclick', this.showToolbar.bind(this));
+
+        window.editor = this.editor;
       },
 
-      /**
-       * The `sayHello` method will return a greeting.
-       *
-       * @method sayHello
-       * @param {String} greeting Pass in a specific greeting.
-       * @return {String} Returns a string greeting.
-       */
-      sayHello: function (greeting) {
-        var response = greeting || 'Hello World!';
-        return 'x-medium-editor says, ' + response;
-      },
-
-      /**
-       * The `x-medium-editor-lasers-success` event is fired whenever we
-       * call fireLasers.
-       *
-       * @event x-medium-editor-lasers-success
-       * @param {Object} detail
-       *   @param {string} detail.sound An amazing sound.
-       */
-
-      /**
-       * The `fireLasers` method will fire the lasers. At least
-       * it will dispatch an event that claims lasers were fired :)
-       *
-       * @method fireLasers
-       */
-      fireLasers: function () {
-        this.fire('x-medium-editor-lasers-success', { sound: 'Pew pew pew!' });
+      showToolbar: function () {
+        this.editor.toolbar.showAndUpdateToolbar();
       }
+
     });
   </script>
 </polymer-element>
